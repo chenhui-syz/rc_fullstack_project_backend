@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "useDefineForClassFields": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "declaration": false,
+    "strict": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "typeRoots": ["node_modules/@types"],
+    "types": ["vite/client", "node"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    // T1
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+  ],
+  "exclude": ["node_modules"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
