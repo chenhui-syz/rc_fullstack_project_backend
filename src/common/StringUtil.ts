@@ -1,7 +1,7 @@
-class StringUtil{
-       static isNotEmpty(str:string){
-              return str!==null && str.length>0
-       }
+class StringUtil {
+  static isNotEmpty(str: string) {
+    return str !== null && str.length > 0;
+  }
 }
 
-export const {isNotEmpty}=StringUtil
+export const { isNotEmpty } = StringUtil;

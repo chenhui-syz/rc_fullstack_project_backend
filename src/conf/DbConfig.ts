@@ -26,7 +26,7 @@ class Conf {
   initConf() {
     this.envConf = {
       dev: {
-        host: '10.44.62.111',
+        host: 'localhost',
         user: 'admin',
         password: '123456',
         database: 'test',

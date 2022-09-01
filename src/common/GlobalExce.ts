@@ -3,8 +3,8 @@ import { success, fail } from './ResResult'
 import logger from './LogUtil'
 
 const globalException = async (ctx: Context, next: Koa.Next) => {
-  logger.info('进入到通用异常')
-  logger.warn('进入到通用异常')
+  // logger.info('进入到通用异常')
+  // logger.warn('进入到通用异常')
   try {
     await next()
   } catch (err: any) {

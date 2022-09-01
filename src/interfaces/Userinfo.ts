@@ -1,8 +1,9 @@
 export default interface Userinfo {
-  userid: number
-  username: string
-  psw: string
-  address: string
-  valid: number,
-  age:string
+  userid: number;
+  username: string;
+  psw: string;
+  address: string;
+  valid: number;
+  birth: any;
+  age: string;
 }

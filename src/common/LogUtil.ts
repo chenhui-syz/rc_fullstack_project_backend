@@ -8,7 +8,7 @@ enum LevelInfo {
   "fatal" = "fatal",
 }
 class LogUtil {
-  // 单例设计模式
+  // 单键设计模式
   static logUtil: LogUtil = new LogUtil();
   // 日志实例
   logInstance!: log4js.Logger;
