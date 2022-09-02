@@ -10,7 +10,7 @@ import { success } from "../common";
 
 // 这里引入的userDao就已经是实例对象了，用小写就行
 import userDao from "../dao/UserDao";
-import { addUser } from "../dao/UserDaoDefine";
+import { addUser ,findAllUser} from "../dao/UserDaoDefine";
 
 const router = new Router();
 
@@ -46,14 +46,16 @@ router.get("/findUserinfo/:username/:psw", async (ctx: Context) => {
   console.log("执行路由请求findUserinfo结束");
 });
 
+router.get('/findAllUser',async (ctx:Context)=>{
+  ctx.body = await findAllUser()
+})
+
 router.post("/addUser", async (ctx: Context) => {
   const userinfo: Userinfo = ctx.request.body;
   // const userinfo = ctx.request.body as Userinfo;
 
-  // const dbUserinfo = addUser(userinfo)
-  const dbUserinfo = 123;
-  console.log("🚀 ~ file: user.ts ~ line 54 ~ router.post ~ addUser", addUser);
-  // console.log("🚀 ~ file: user.ts ~ line 54 ~ router.post ~ addUser", addUser)
+  const dbUserinfo = await addUser(userinfo)
+  console.log("🚀 ~ file: user.ts ~ line 57 ~ router.post ~ dbUserinfo", dbUserinfo)
   ctx.body = success(dbUserinfo);
   // ctx.body = `您好:${userinfo.username},年龄:${userinfo.age}`;
 });
