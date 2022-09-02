@@ -53,7 +53,7 @@ class Userinfo {
     );
     //同步数据库，force的值为true，表若存在则先删除后创建
     // force的值为false表示表若存在则不创建，不存在才创建
-    // 真正设置为false就行
+    // 平时设置为false就行
     model.sync({ force: false });
 
     return model;
