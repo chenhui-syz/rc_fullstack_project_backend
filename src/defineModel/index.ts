@@ -47,15 +47,13 @@ class Userinfo {
         },
       },
       {
-        freezeTableName: true, //true表示使用给定的表名，false表示模型名后加s作为表名
+        // freezeTableName: true, //true表示使用给定的表名，false表示模型名后加s作为表名
         timestamps: false, //true表示给模型加上时间戳属性(createAt、updateAt),false表示不带时间戳属性
       }
     );
     //同步数据库，force的值为true，表若存在则先删除后创建
     // force的值为false表示表若存在则不创建，不存在才创建
-    // 平时设置为false就行
-    model.sync({ force: false });
-
+    // model.sync({ force: false });
     return model;
   }
 }

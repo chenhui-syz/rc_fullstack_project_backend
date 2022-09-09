@@ -9,7 +9,7 @@ import Koa from "koa";
 import allRouterLoader from "./common/AllRouterLoader";
 
 import dbconfig from "./conf/DbConfig";
-console.log(dbconfig.getConf());
+console.log('打印下配置：',dbconfig.getConf('22'));
 
 // 导入路由
 // import userRouter from "./router/user";
