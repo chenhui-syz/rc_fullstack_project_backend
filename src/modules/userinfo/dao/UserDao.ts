@@ -1,6 +1,10 @@
 // 具体到指定表的Dao操作
 // sequelize版本
-import { model } from "../defineModel";
+// 方案1的装饰器模型
+import { model } from "../defmodel";
+// 方案3的装饰器模型
+// import model from "../../decormodel/Userinfo";
+
 import { Op, Sequelize } from "sequelize";
 
 type Userinfo = {
@@ -12,11 +16,13 @@ type Userinfo = {
   birth: any;
   age: any;
 };
-class UserDaoDefine {
+class UserDao {
   // 单键设计模式
-  static userDaoDefine: UserDaoDefine = new UserDaoDefine();
+  static userDao: UserDao = new UserDao();
   // static addUser: UserDaoDefine = new UserDaoDefine();
-  addUser(userinfo: Userinfo) {
+  // 这样写会报错，不知道为什么
+  // addUser(userinfo: Userinfo) {
+  addUser(userinfo: any) {
     return model.create(userinfo);
     // return 123;
   }
@@ -139,4 +145,4 @@ class UserDaoDefine {
 //   findUserAndAddress,
 // } = UserDaoDefine;
 // 不用每次都需要增加导入导出的单键模式
-export default UserDaoDefine.userDaoDefine;
+export default UserDao.userDao;

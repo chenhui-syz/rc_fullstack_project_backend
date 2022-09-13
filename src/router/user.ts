@@ -10,9 +10,9 @@ import { success } from "../common";
 
 // 这里引入的userDao就已经是实例对象了，用小写就行
 // import userDao from "../dao/UserDao";
-import userDao from "../dao/UserDaoDefine";
+import userDao from "../modules/userinfo/dao/UserDao"
 
-import userDaoOrm from '../dao/UserDaoOrm'
+// import userDaoOrm from '../dao/UserDaoOrm'
 
 const router = new Router();
 
@@ -73,7 +73,7 @@ router.get("/findByLike/:key", async (ctx: Context) => {
 // userDaoOrm
 router.get("/findByLikeWithOrm/:key", async (ctx: Context) => {
   const { key } = ctx.params;
-  ctx.body = success(await userDaoOrm.findByLike(key));
+  ctx.body = success(await userDao.findByLike(key));
 });
 
 router.get("/findUserAndAddress/:username/:address", async (ctx: Context) => {
