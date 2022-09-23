@@ -12,7 +12,7 @@ import dbconfig from "./conf/DbConfig";
 console.log('打印下配置：',dbconfig.getConf('22'));
 
 // 导入路由
-// import userRouter from "./router/user";
+// import userRouter from "./router/UserRouter";
 
 const app = new Koa();
 // const router = new Router();
